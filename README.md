@@ -1,40 +1,96 @@
-# Your Plugin Name
+# NativeScript Centered Label
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
+![Demo IOS](./media/Webp.net-resizeimage.png) &nbsp;&nbsp;&nbsp;&nbsp;
+![Demo Android](./media/Webp.net-resizeimage-1.png)
 
-Then describe what's the purpose of your plugin. 
+This plugin allows you to have Label that are centered both vertically and horizontally
 
-In case you develop UI plugin, this is where you can add some screenshots.
+## Demo apps
+ 
+### NativeScript-Core (XML)
+Check out the [demo](/demo) folder. This is how to clone and run it:
 
-## (Optional) Prerequisites / Requirements
+```bash
+git clone https://github.com/mhtghn/nativescript-centered-label
+cd nativescript-centered-label/src
+npm run demo.ios # or demo.android
+```
 
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
+### NativeScript-Angular
+Check out the [demo-angular](/demo-angular) folder. This is how to clone and run it:
+
+```bash
+git clone https://github.com/mhtghn/nativescript-centered-label
+cd nativescript-centered-label/src
+npm run demo-angular.ios # or demo-angular.android
+```
 
 ## Installation
 
-Describe your plugin installation steps. Ideally it would be something like:
 
 ```javascript
-tns plugin add <your-plugin-name>
+tns plugin add nativescript-centered-label
 ```
 
 ## Usage 
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
-	
-	```javascript
-    Usage code snippets here
-    ```)
+### NativeScript-Core (XML)
+```xml
+<Page class="page"
+    navigatingTo="onNavigatingTo"
+    xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:ui="nativescript-centered-label">
 
-## API
+    <ActionBar class="action-bar">
+        <Label class="action-bar-title" text="Home"></Label>
+    </ActionBar>
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
-    
-| Property | Default | Description |
-| --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
-    
-## License
+    <GridLayout>
+        <!-- Add your page content here -->
+        <ui:CenteredLabel text="Centered Label" class="c-label"></ui:CenteredLabel>
+    </GridLayout>
+</Page>
+```
 
-Apache License Version 2.0, January 2004
+### NativeScript Angular
+
+#### TypeScript
+
+```typescript
+...
+import {CenteredLabelModule} from "nativescript-centered-label";
+
+@NgModule({
+    imports: [
+        ...
+        CenteredLabelModule
+    ],
+    ...
+})
+export class HomeModule { }
+```
+
+#### HTML
+
+```HTML
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Home"></Label>
+</ActionBar>
+
+<GridLayout class="page">
+    <CenteredLabel text="Centered Label" class="c-label" (tap)="testTap()"></CenteredLabel>
+</GridLayout>
+```
+
+#### CSS
+```CSS
+.c-label{
+    background-color: rgba(0, 0, 0, 0.1);
+    border-width: 4;
+    border-color: #a8a8a8;
+    height: 20%;
+    width: 60%;
+    border-radius: 30;
+    color: black;
+    font-size: 20;
+}
+```

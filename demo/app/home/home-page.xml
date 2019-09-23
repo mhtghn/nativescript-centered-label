@@ -1,12 +1,13 @@
 <Page class="page"
-    navigatingTo="onNavigatingTo" 
-    xmlns="http://schemas.nativescript.org/tns.xsd">
-    
+    navigatingTo="onNavigatingTo"
+    xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:ui="nativescript-centered-label">
+
     <ActionBar class="action-bar">
         <Label class="action-bar-title" text="Home"></Label>
     </ActionBar>
 
     <GridLayout>
         <!-- Add your page content here -->
+        <ui:CenteredLabel text="Centered Label" class="c-label"></ui:CenteredLabel>
     </GridLayout>
 </Page>

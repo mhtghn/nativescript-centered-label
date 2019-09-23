@@ -183,7 +183,7 @@ module.exports = env => {
                         },
                     ].filter(loader => !!loader)
                 },
-                
+
                 {
                     test: /\.(ts|css|scss|html|xml)$/,
                     use: "nativescript-dev-webpack/hmr/hot-loader"

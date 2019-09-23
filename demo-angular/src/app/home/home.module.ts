@@ -3,11 +3,13 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
 
 import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
+import {CenteredLabelModule} from "../../../../src/angular";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
-        HomeRoutingModule
+        HomeRoutingModule,
+        CenteredLabelModule
     ],
     declarations: [
         HomeComponent
